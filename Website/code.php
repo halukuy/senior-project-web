@@ -30,7 +30,7 @@ if(isset($_POST['save_excel_data']))
                 $password = $row['2'];
                 $name = $row['3'];
 
-                $studentQuery = "INSERT INTO users (id,user_name,password,name) VALUES ('$id','$user_name','$password','$name')";
+                $studentQuery = "INSERT INTO coordinators (id,user_name,password,name) VALUES ('$id','$user_name','$password','$name')";
                 $result = mysqli_query($conn, $studentQuery);
                 $msg = true;
             }

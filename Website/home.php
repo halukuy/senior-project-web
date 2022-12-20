@@ -39,7 +39,7 @@ for(i=0; i<el.length; i++) {
                 <div class="card mt-5">
                     <div class="card-header">
                        <select onchange = "display(this.value)">
-<option value='Users' selected>Users</option>
+<option value='Coordinators' selected>Coordinators</option>
 <option value='courses'>Courses</option>
 <option value='diagnostics'>Diagnostics</option>
 <option value='physicians'>Physicians</option>
@@ -48,7 +48,7 @@ for(i=0; i<el.length; i++) {
                     </div>
                     <div class="card-body">
                         
-                        <table class="table table-bordered" id="Users">
+                        <table class="table table-bordered" id="Coordinators">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -61,7 +61,7 @@ for(i=0; i<el.length; i++) {
                                 <?php 
 
 
-                                    $query = "SELECT * FROM users";
+                                    $query = "SELECT * FROM coordinators";
                                     $query_run = mysqli_query($conn, $query);
 
                                     if(mysqli_num_rows($query_run) > 0)
@@ -150,9 +150,9 @@ for(i=0; i<el.length; i++) {
                                         {
                                             ?>
                                             <tr>
-                                                <td><?= $row['SpecialtyID']; ?></td>
-                                                <td><?= $row['DiagnosisID']; ?></td>
-                                                <td><?= $row['DiagnosisName']; ?></td>
+                                                <td><?= $row['ID']; ?></td>
+                                                <td><?= $row['specialtyID']; ?></td>
+                                                <td><?= $row['name']; ?></td>
                                             </tr>
                                             <?php
                                         }
@@ -180,7 +180,7 @@ for(i=0; i<el.length; i++) {
                                 <?php 
 
 
-                                    $query = "SELECT * FROM physicians";
+                                    $query = "SELECT * FROM attendingphysicians";
                                     $query_run = mysqli_query($conn, $query);
 
                                     if(mysqli_num_rows($query_run) > 0)

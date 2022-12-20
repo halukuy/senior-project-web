@@ -11,7 +11,7 @@ function filterData(&$str){
 
 if(isset($_POST["export"]))
 {
- $query = "SELECT * FROM users";
+ $query = "SELECT * FROM coordinators";
  $result = mysqli_query($conn, $query);
  if(mysqli_num_rows($result) > 0)
  {
