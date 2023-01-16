@@ -23,8 +23,8 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h4>Import Excel File</h4>
-                    </div>
+                        <h4>Coordinators</h4>
+                  
                     <div class="card-body">
 
                         <form action="code.php" method="POST" enctype="multipart/form-data">
@@ -44,6 +44,73 @@
         </div>
     </div>
 
+<div class="card">
+                    <div class="card-header">
+                        <h4>Courses</h4>
+                  
+                    <div class="card-body">
+
+                        <form action="codecourses.php" method="POST" enctype="multipart/form-data">
+
+                            <input type="file" name="import_file" class="form-control" />
+                            <button type="submit" name="save_excel_data" class="btn btn-primary mt-3">Import</button>
+
+                        </form>
+ <form method="post" action="courseexport.php">
+                            <button type="submit" name="export" class="btn btn-primary mt-3">Export</button>
+    </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+                    <div class="card-header">
+                        <h4>Diagnostics</h4>
+                  
+                    <div class="card-body">
+
+                        <form action="codediagnostics.php" method="POST" enctype="multipart/form-data">
+
+                            <input type="file" name="import_file" class="form-control" />
+                            <button type="submit" name="save_excel_data" class="btn btn-primary mt-3">Import</button>
+
+                        </form>
+ <form method="post" action="exportdiagnostics.php">
+                            <button type="submit" name="export" class="btn btn-primary mt-3">Export</button>
+    </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+                    <div class="card-header">
+                        <h4>Physicians</h4>
+                  
+                    <div class="card-body">
+
+                        <form action="codephysicians.php" method="POST" enctype="multipart/form-data">
+
+                            <input type="file" name="import_file" class="form-control" />
+                            <button type="submit" name="save_excel_data" class="btn btn-primary mt-3">Import</button>
+
+                        </form>
+ <form method="post" action="exportphysicians.php">
+                            <button type="submit" name="export" class="btn btn-primary mt-3">Export</button>
+    </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+

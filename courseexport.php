@@ -11,19 +11,19 @@ if(isset($_POST["export"]))
 {
  
  
-$fileName = "coordinators-data_" . date('Y-m-d') . ".xls"; 
+$fileName = "courses-data_" . date('Y-m-d') . ".xls"; 
  
 
-$fields = array('id', 'user_name', 'password'); 
+$fields = array('SpecialtyID', 'Description', 'Course'); 
  
 
 $excelData = implode("\t", array_values($fields)) . "\n"; 
 
 
-$query = $conn->query("SELECT * FROM coordinators ORDER BY id ASC"); 
+$query = $conn->query("SELECT * FROM courses ORDER BY SpecialtyID ASC"); 
 if($query->num_rows > 0){ 
     while($row = $query->fetch_assoc()){ 
-        $lineData = array($row['id'], $row['user_name'], $row['password']); 
+        $lineData = array($row['SpecialtyID'], $row['Description'], $row['Course']); 
         array_walk($lineData, 'filterData'); 
         $excelData .= implode("\t", array_values($lineData)) . "\n"; 
     } 
