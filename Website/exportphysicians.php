@@ -14,16 +14,16 @@ if(isset($_POST["export"]))
 $fileName = "physicianss-data_" . date('Y-m-d') . ".xls"; 
  
 
-$fields = array('Attending_Physician_Name', 'tel', 'InstituteID', 'SpecialityID'); 
+$fields = array('ID', 'name', 'surname', 'instituteID','specialityID','phone'); 
  
 
 $excelData = implode("\t", array_values($fields)) . "\n"; 
 
 
-$query = $conn->query("SELECT * FROM attendingphysicians ORDER BY Attending_Physician_Name ASC"); 
+$query = $conn->query("SELECT * FROM attendingphysicians ORDER BY name ASC"); 
 if($query->num_rows > 0){ 
     while($row = $query->fetch_assoc()){ 
-        $lineData = array($row['Attending_Physician_Name'], $row['tel'], $row['InstituteID'], $row['SpecialityID']); 
+        $lineData = array($row['ID'], $row['name'], $row['surname'], $row['instituteID'], $row['specialityID'], $row['phone']); 
         array_walk($lineData, 'filterData'); 
         $excelData .= implode("\t", array_values($lineData)) . "\n"; 
     } 

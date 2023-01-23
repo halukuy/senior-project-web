@@ -25,12 +25,16 @@ if(isset($_POST['save_excel_data']))
         {
             if($count > 0)
             {
-                $Attending_Physician_Name = $row['0'];
-                $Tel = $row['1'];
-                $InstituteID = $row['2'];
-                $SpecialityID = $row['3'];
+                $ID= $row['0'];
+                $name = $row['1'];
+                $surname= $row['2'];
+                                $instituteID = $row['3'];
 
-                $physicianQuery = "INSERT INTO attendingphysicians (Attending_Physician_Name,Tel,InstituteID,SpecialityID) VALUES ('$Attending_Physician_Name','$Tel','$InstituteID','$SpecialityID')";
+                $specialityID = $row['4'];
+                                $phone = $row['5'];
+
+
+                $physicianQuery = "INSERT INTO attendingphysicians (ID,name,instituteID,specialityID,phone) VALUES ('$ID','$name','$surname','$instituteID','$specialityID',' $phone')";
                 $result = mysqli_query($conn, $physicianQuery);
                 $msg = true;
             }
